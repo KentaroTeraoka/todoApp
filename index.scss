@@ -1,3 +1,4 @@
+// variable
 $font-size: 1.125rem;
 $bg-color: #f2efdc;
 $text-color: #333333;
@@ -6,18 +7,33 @@ $darkgreen: #01261f;
 $green: #025949;
 $light-green: #80a694;
 
+// mixin
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+// reset
 * {
   font-family: "Rubik", "Kosugi Maru";
   margin: 0;
   padding: 0;
 }
 
+// default
 body {
   background: $bg-color;
   color: $text-color;
   font-size: $font-size;
 }
 
+// common
 .container {
   max-width: 400px;
   height: 100vh;
@@ -32,8 +48,27 @@ body {
   margin-bottom: 2rem;
 }
 
+// modal
+.modal {
+  &__overlay {
+    @include flex-center();
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  &__contents {
+    background: $bg-color;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+  }
+}
+
+// taskList
 .task-form {
-  padding-bottom: 2rem;
   label {
     display: block;
   }
@@ -60,6 +95,7 @@ body {
 
 .task-list {
   list-style: none;
+  margin-top: 2rem;
   li {
     border-bottom: 1px solid $border-color;
     padding-bottom: 0.75rem;
@@ -69,6 +105,9 @@ body {
       padding-top: 0.75rem;
     }
   }
+  &__title-group {
+    @include flex-between();
+  }
   &__title {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -77,13 +116,10 @@ body {
     font-size: 16px;
     color: #888888;
   }
+  &__edit-icon,
   &__delete-icon {
+    font-size: 1rem;
     color: #888888;
-    border: none;
+    padding: 0 0.25rem;
   }
-}
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
 }
