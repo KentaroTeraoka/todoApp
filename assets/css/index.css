@@ -1,0 +1,95 @@
+* {
+  font-family: "Rubik", "Kosugi Maru";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2efdc;
+  color: #333333;
+  font-size: 1.125rem;
+}
+
+.container {
+  max-width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.contents {
+  padding: 1.5rem 1rem;
+}
+
+.main-title {
+  margin-bottom: 2rem;
+}
+
+.task-form {
+  padding-bottom: 2rem;
+}
+
+.task-form label {
+  display: block;
+}
+
+.task-form input {
+  font-size: 1.125rem;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.5rem 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.task-form button {
+  font-size: 1.125rem;
+  font-weight: bold;
+  background: #025949;
+  color: #fff;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.task-list li:first-child {
+  border-top: 1px solid #cccccc;
+  padding-top: 0.75rem;
+}
+
+.task-list__title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.task-list__detail {
+  font-size: 16px;
+  color: #888888;
+}
+
+.task-list__delete-icon {
+  color: #888888;
+  border: none;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=index.css.map */

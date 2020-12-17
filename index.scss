@@ -1,0 +1,89 @@
+$font-size: 1.125rem;
+$bg-color: #f2efdc;
+$text-color: #333333;
+$border-color: #cccccc;
+$darkgreen: #01261f;
+$green: #025949;
+$light-green: #80a694;
+
+* {
+  font-family: "Rubik", "Kosugi Maru";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bg-color;
+  color: $text-color;
+  font-size: $font-size;
+}
+
+.container {
+  max-width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.contents {
+  padding: 1.5rem 1rem;
+}
+
+.main-title {
+  margin-bottom: 2rem;
+}
+
+.task-form {
+  padding-bottom: 2rem;
+  label {
+    display: block;
+  }
+  input {
+    font-size: $font-size;
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 0.5rem 0.25rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    font-size: $font-size;
+    font-weight: bold;
+    background: $green;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+}
+
+.task-list {
+  list-style: none;
+  li {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    &:first-child {
+      border-top: 1px solid $border-color;
+      padding-top: 0.75rem;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  &__detail {
+    font-size: 16px;
+    color: #888888;
+  }
+  &__delete-icon {
+    color: #888888;
+    border: none;
+  }
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
