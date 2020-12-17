@@ -44,9 +44,17 @@ body {
 }
 
 .modal__contents {
+  position: relative;
   background: #f2efdc;
   border-radius: 8px;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.modal__close-icon {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: #888888;
 }
 
 .task-form label {

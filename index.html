@@ -18,7 +18,7 @@
         <div v-if="showModal" class="modal">
             <div class="modal__overlay">
                 <div class="modal__contents">
-                    <span v-on:click="closeModal"><i class="fas fa-times"></i></span>
+                    <span class="modal__close-icon" v-on:click="closeModal"><i class="fas fa-times"></i></span>
                     <form action="" class="task-form">
                         <div>
                             <label for="task-title">taskTitle</label>
