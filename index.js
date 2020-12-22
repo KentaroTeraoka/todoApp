@@ -52,7 +52,7 @@ var app = new Vue({
     taskDetail: '',
     targetTaskIndex: 0,
     taskList: [],
-    showModal: false,
+    showModal: false
   },
   methods: {
     addTask: function () {
