@@ -7,28 +7,18 @@ var app = new Vue({
     editedTaskDetail: '',
     targetTaskIndex: 0,
     taskList: [],
-    isBtnDisabled: true,
     showModal: false
   },
   methods: {
-    isInputted: function () {
-      if (this.taskTitle.length > 0 || this.editedTaskTitle.length > 0) {
-        this.isBtnDisabled = false
-      } else {
-        this.isBtnDisabled = true
-      }
-    },
     addTask: function () {
       this.taskList.push({ title: this.taskTitle, detail: this.taskDetail })
       this.taskTitle = ''
       this.taskDetail = ''
-      this.isBtnDisabled = true
     },
     editTask: function () {
       this.taskList[this.targetTaskIndex] = { title: this.editedTaskTitle, detail: this.editedTaskDetail }
       this.editedTaskTitle = ''
       this.editedTaskDetail = ''
-      this.isBtnDisabled = true
       this.closeModal()
     },
     deleteTask: function (index) {
@@ -37,9 +27,16 @@ var app = new Vue({
     openModal: function (index) {
       this.targetTaskIndex = index
       this.showModal = true
+      this.isBtnDisabled()
     },
     closeModal: function () {
       this.showModal = false
+    }
+  },
+  computed: {
+    isBtnDisabled: function () {
+      console.log(!(this.taskTitle.length > 0 || this.editedTaskTitle.length > 0))
+      return !(this.taskTitle.length > 0 || this.editedTaskTitle.length > 0)
     }
   }
 })
