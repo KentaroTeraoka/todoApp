@@ -53,7 +53,6 @@ var app = new Vue({
     targetTaskIndex: 0,
     taskList: [],
     showModal: false,
-    testText: 'testです'
   },
   methods: {
     addTask: function () {
