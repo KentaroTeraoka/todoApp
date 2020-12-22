@@ -1,5 +1,5 @@
 Vue.component('modal', {
-  props: ['showModal', 'taskList', 'targetTaskIndex'],
+  props: ['taskList', 'targetTaskIndex'],
   data: function (){
     return{
       editedTaskTitle: '',
