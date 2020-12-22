@@ -24,8 +24,37 @@ body {
   margin-bottom: 2rem;
 }
 
-.task-form {
-  padding-bottom: 2rem;
+.modal__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.modal__contents {
+  position: relative;
+  background: #f2efdc;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+}
+
+.modal__close-icon {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: #888888;
 }
 
 .task-form label {
@@ -56,6 +85,7 @@ body {
 
 .task-list {
   list-style: none;
+  margin-top: 2rem;
 }
 
 .task-list li {
@@ -69,6 +99,15 @@ body {
   padding-top: 0.75rem;
 }
 
+.task-list__title-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .task-list__title {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -79,17 +118,9 @@ body {
   color: #888888;
 }
 
-.task-list__delete-icon {
+.task-list__edit-icon, .task-list__delete-icon {
+  font-size: 1rem;
   color: #888888;
-  border: none;
-}
-
-.flex-between {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 0 0.25rem;
 }
 /*# sourceMappingURL=index.css.map */

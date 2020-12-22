@@ -15,25 +15,46 @@
 </head>
 <body>
     <div id="app">
+        <div v-if="showModal" class="modal">
+            <div class="modal__overlay">
+                <div class="modal__contents">
+                    <span class="modal__close-icon" v-on:click="closeModal"><i class="fas fa-times"></i></span>
+                    <form action="" class="task-form">
+                        <div>
+                            <label for="task-title">taskTitle</label>
+                            <input name="task-title" type="text" v-model="editedTaskTitle">
+                        </div>
+                        <div>
+                            <label for="task-detail">taskDetail</label>
+                            <input name="task-detail" type="text" v-model="editedTaskDetail">
+                        </div>
+                        <button type="button" v-on:click="editTask" v-bind:disabled="isBtnDisabled">Todoを編集</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="contents">
                 <h1 class="main-title">TodoApp</h1>
                 <form action="" class="task-form">
                     <div>
                         <label for="task-title">taskTitle</label>
-                        <input name="task-title" type="text" v-model="taskTitle" @change="isInputted">
+                        <input name="task-title" type="text" v-model="taskTitle">
                     </div>
                     <div>
                         <label for="task-detail">taskDetail</label>
                         <input name="task-detail" type="text" v-model="taskDetail">
                     </div>
-                    <button type="button" v-on:click="addTask" v-bind:disabled="isAddBtnDisabled">Todoを追加</button>
+                    <button type="button" v-on:click="addTask" v-bind:disabled="isBtnDisabled">Todoを追加</button>
                 </form>
                 <ul class="task-list">
                     <li v-for="(item, index) in taskList">
-                        <div class="flex-between">
+                        <div class="task-list__title-group">
                             <span class="task-list__title">{{ item.title }}</span>
-                            <span class="task-list__delete-icon" v-on:click="deleteTask(index)"><i class="fas fa-times"></i></span>
+                            <div>
+                                <span class="task-list__edit-icon" v-on:click="openModal(index)"><i class="fas fa-edit"></i></span>
+                                <span class="task-list__delete-icon" v-on:click="deleteTask(index)"><i class="fas fa-times"></i></span>
+                            </div>
                         </div>
                         <span class="task-list__detail">{{ item.detail }}</span>
                     </li>
