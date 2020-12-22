@@ -35,7 +35,6 @@ var app = new Vue({
   },
   computed: {
     isBtnDisabled: function () {
-      console.log(!(this.taskTitle.length > 0 || this.editedTaskTitle.length > 0))
       return !(this.taskTitle.length > 0 || this.editedTaskTitle.length > 0)
     }
   }
