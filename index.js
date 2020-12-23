@@ -8,7 +8,7 @@ Vue.component('modal', {
   },
   template: `
     <div class="modal">
-          <div class="modal__overlay">
+          <div class="modal__overlay" v-on:click.self="closeModalTrigger">
               <div class="modal__contents">
                   <span class="modal__close-icon" v-on:click="closeModalTrigger"><i class="fas fa-times"></i></span>
                   <form action="" class="task-form">

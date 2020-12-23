@@ -48,6 +48,7 @@ body {
   background: #f2efdc;
   border-radius: 8px;
   padding: 1.5rem 2rem;
+  z-index: 20;
 }
 
 .modal__close-icon {
