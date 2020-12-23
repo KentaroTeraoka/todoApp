@@ -27,11 +27,11 @@
                 <form action="" class="task-form">
                     <div>
                         <label for="task-title">taskTitle</label>
-                        <input name="task-title" type="text" v-model="taskTitle">
+                        <input name="task-title" type="text" placeholder="taskTitleを追加" v-model="taskTitle">
                     </div>
                     <div>
                         <label for="task-detail">taskDetail</label>
-                        <input name="task-detail" type="text" v-model="taskDetail">
+                        <input name="task-detail" type="text" placeholder="taskDetailを追加" v-model="taskDetail">
                     </div>
                     <button type="button" v-on:click="addTask" v-bind:disabled="isAddBtnDisabled">Todoを追加</button>
                 </form>

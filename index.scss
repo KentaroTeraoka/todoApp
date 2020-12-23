@@ -7,6 +7,7 @@ $darkgreen: #01261f;
 $green: #025949;
 $light-green: #80a694;
 $gray: #888888;
+$light-gray: #dddddd;
 
 // mixin
 @mixin flex-center() {
@@ -88,6 +89,9 @@ body {
     box-sizing: border-box;
     padding: 0.5rem 0.25rem;
     margin-bottom: 1rem;
+    &::placeholder {
+      color: $light-gray;
+    }
   }
   button {
     font-size: $font-size;

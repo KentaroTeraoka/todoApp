@@ -14,11 +14,11 @@ Vue.component('modal', {
                   <form action="" class="task-form">
                       <div>
                           <label for="task-title">taskTitle</label>
-                          <input name="task-title" type="text" v-model="editedTaskTitle">
+                          <input name="task-title" type="text" placeholder="taskTitleを編集" v-model="editedTaskTitle">
                       </div>
                       <div>
                           <label for="task-detail">taskDetail</label>
-                          <input name="task-detail" type="text" v-model="editedTaskDetail">
+                          <input name="task-detail" type="text" placeholder="taskDetailを編集" v-model="editedTaskDetail">
                       </div>
                       <button type="button" v-on:click="editTask()" v-bind:disabled="isEditBtnDisabled">Todoを編集</button>
                   </form>

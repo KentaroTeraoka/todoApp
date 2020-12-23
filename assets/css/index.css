@@ -72,6 +72,22 @@ body {
   margin-bottom: 1rem;
 }
 
+.task-form input::-webkit-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input:-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input::-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input::placeholder {
+  color: #dddddd;
+}
+
 .task-form button {
   font-size: 1.125rem;
   font-weight: bold;
