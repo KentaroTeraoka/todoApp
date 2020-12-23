@@ -29,8 +29,6 @@ Vue.component('modal', {
   methods: {
     editTask: function () {
       this.taskList[this.targetTaskIndex] = { title: this.editedTaskTitle, detail: this.editedTaskDetail }
-      this.editedTaskTitle = ''
-      this.editedTaskDetail = ''
       this.closeModalTrigger()
     },
     closeModalTrigger: function () {
