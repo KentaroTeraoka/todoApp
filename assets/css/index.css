@@ -48,6 +48,7 @@ body {
   background: #f2efdc;
   border-radius: 8px;
   padding: 1.5rem 2rem;
+  z-index: 20;
 }
 
 .modal__close-icon {
@@ -70,6 +71,22 @@ body {
           box-sizing: border-box;
   padding: 0.5rem 0.25rem;
   margin-bottom: 1rem;
+}
+
+.task-form input::-webkit-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input:-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input::-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.task-form input::placeholder {
+  color: #dddddd;
 }
 
 .task-form button {

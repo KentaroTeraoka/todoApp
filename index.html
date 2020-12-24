@@ -15,37 +15,25 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="showModal" class="modal">
-            <div class="modal__overlay">
-                <div class="modal__contents">
-                    <span class="modal__close-icon" v-on:click="closeModal"><i class="fas fa-times"></i></span>
-                    <form action="" class="task-form">
-                        <div>
-                            <label for="task-title">taskTitle</label>
-                            <input name="task-title" type="text" v-model="editedTaskTitle">
-                        </div>
-                        <div>
-                            <label for="task-detail">taskDetail</label>
-                            <input name="task-detail" type="text" v-model="editedTaskDetail">
-                        </div>
-                        <button type="button" v-on:click="editTask" v-bind:disabled="isBtnDisabled">Todoを編集</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <modal 
+            v-if="showModal" 
+            @close-modal="closeModal"
+            v-bind:task-list="taskList"
+            v-bind:target-task-index="targetTaskIndex"
+        ></modal>
         <div class="container">
             <div class="contents">
                 <h1 class="main-title">TodoApp</h1>
                 <form action="" class="task-form">
                     <div>
                         <label for="task-title">taskTitle</label>
-                        <input name="task-title" type="text" v-model="taskTitle">
+                        <input name="task-title" type="text" placeholder="taskTitleを追加" v-model="taskTitle">
                     </div>
                     <div>
                         <label for="task-detail">taskDetail</label>
-                        <input name="task-detail" type="text" v-model="taskDetail">
+                        <input name="task-detail" type="text" placeholder="taskDetailを追加" v-model="taskDetail">
                     </div>
-                    <button type="button" v-on:click="addTask" v-bind:disabled="isBtnDisabled">Todoを追加</button>
+                    <button type="button" v-on:click="addTask" v-bind:disabled="isAddBtnDisabled">Todoを追加</button>
                 </form>
                 <ul class="task-list">
                     <li v-for="(item, index) in taskList">
