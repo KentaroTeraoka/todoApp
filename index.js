@@ -2,8 +2,8 @@ Vue.component('modal', {
   props: ['taskList', 'targetTaskIndex'],
   data: function (){
     return{
-      editedTaskTitle: '',
-      editedTaskDetail: ''
+      editedTaskTitle: this.taskList[this.targetTaskIndex].title,
+      editedTaskDetail: this.taskList[this.targetTaskIndex].detail
     }
   },
   template: `
@@ -14,11 +14,19 @@ Vue.component('modal', {
                   <form action="" class="task-form">
                       <div>
                           <label for="task-title">taskTitle</label>
-                          <input name="task-title" type="text" placeholder="taskTitleを編集" v-model="editedTaskTitle">
+                          <input 
+                              name="task-title" 
+                              type="text" 
+                              placeholder="taskTitleを編集"
+                              v-model="editedTaskTitle">
                       </div>
                       <div>
                           <label for="task-detail">taskDetail</label>
-                          <input name="task-detail" type="text" placeholder="taskDetailを編集" v-model="editedTaskDetail">
+                          <input 
+                              name="task-detail" 
+                              type="text" 
+                              placeholder="taskDetailを編集"
+                              v-model="editedTaskDetail">
                       </div>
                       <button type="button" v-on:click="editTask()" v-bind:disabled="isEditBtnDisabled">Todoを編集</button>
                   </form>
@@ -37,7 +45,7 @@ Vue.component('modal', {
   },
   computed: {
     isEditBtnDisabled: function () {
-      return !(this.editedTaskTitle.length > 0)
+      return this.editedTaskTitle.length === 0
     }
   }
 })
